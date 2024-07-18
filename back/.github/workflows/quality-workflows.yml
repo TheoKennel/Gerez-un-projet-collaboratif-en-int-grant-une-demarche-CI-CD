@@ -9,8 +9,7 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build and analyze
+  quality_back:
     runs-on: ubuntu-latest
 
     steps:
