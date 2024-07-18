@@ -10,8 +10,7 @@ on:
 
 
 jobs:
-  build:
-    name: Build and analyze
+  quality_front:
     runs-on: ubuntu-latest
 
     steps:
