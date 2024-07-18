@@ -113,11 +113,11 @@ jobs:
         run: npm install -g sonar-scanner
       - name: Build and analyze frontend with SonarQube
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FRONT }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
           sonar-scanner \
-          -Dsonar.projectKey=occ_ci_cd \
-          -Dsonar.projectName=occ_ci_cd \
+          -Dsonar.projectKey=occ_ci_cd-frontend \
+          -Dsonar.projectName=occ_ci_cd-frontend \
           -Dsonar.host.url=$SONAR_HOST_URL \
           -Dsonar.login=$SONAR_TOKEN
