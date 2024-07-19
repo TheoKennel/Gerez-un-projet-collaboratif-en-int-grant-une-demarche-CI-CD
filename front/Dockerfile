@@ -1,9 +1,10 @@
 FROM node:latest as build
 
-WORKDIR /usr/local/app
-COPY package.json ./
+COPY package.json yarn.lock ./
 
 RUN yarn install
+
+RUN yarn global add @angular/cli
 
 COPY . .
 
