@@ -1,6 +1,6 @@
 FROM node:latest as build
 
-COPY package.json yarn.lock ./
+COPY package.json  ./
 
 RUN yarn install
 
