@@ -154,3 +154,9 @@ jobs:
           file: ${{ matrix.component }}/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/bobapp_occ:${{ matrix.component }}_${{ github.ref_name }}
+
+       - name: Upload Docker Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ matrix.component }}-docker-build
+          path: ./${{ matrix.component }}/*.dockerbuild
