@@ -153,4 +153,4 @@ jobs:
           context: ${{ matrix.component }}
           file: ${{ matrix.component }}/Dockerfile
           push: true
-          tags: bobapp-${{ matrix.component }}:${{ github.ref_name }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bobapp_occ:${{ matrix.component }}_${{ github.ref_name }}
