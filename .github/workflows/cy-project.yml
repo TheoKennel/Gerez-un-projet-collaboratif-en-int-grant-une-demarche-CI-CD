@@ -150,7 +150,7 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v6
         with:
-          context: $${{ matrix.component }}
+          context: ${{ matrix.component }}
           file: ${{ matrix.component }}/Dockerfile
           push: true
           tags: ${{ github.repository_owner }}/bobapp-${{ matrix.component }}:${{ github.ref_name }}
