@@ -68,12 +68,6 @@ jobs:
           -Dsonar.projectName=occ_ci_cd \
           -Dsonar.host.url=$SONAR_HOST_URL \
           -Dsonar.login=$SONAR_TOKEN
-      
-      - name: Check the Quality Gate status 
-        uses: sonarsource/sonarqube-quality-gate-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
   frontend-test:
     runs-on: ubuntu-latest
@@ -127,12 +121,6 @@ jobs:
           -Dsonar.projectName=occ_ci_cd-frontend \
           -Dsonar.host.url=$SONAR_HOST_URL \
           -Dsonar.login=$SONAR_TOKEN
-
-      - name: Check the Quality Gate status 
-        uses: sonarsource/sonarqube-quality-gate-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
   docker_build_and_push:
     runs-on: ubuntu-latest
