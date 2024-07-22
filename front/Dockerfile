@@ -3,7 +3,13 @@ FROM node:14 as build
 WORKDIR /usr/local/app
 COPY package.json angular.json tsconfig.json nginx.conf ./
 
-RUN npm install
+RUN npm install --ignore-scripts
+
+COPY src ./src
+COPY karma.conf.js ./
+COPY tsconfig.app.json ./
+COPY tsconfig.spec.json ./
+
 RUN npm run build
 
 FROM nginx:latest as production
