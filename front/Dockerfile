@@ -4,11 +4,8 @@ WORKDIR /usr/local/app
 COPY package.json angular.json tsconfig.json nginx.conf ./
 
 RUN npm install
-
-COPY . .
-
 RUN npm run build
- 
+
 FROM nginx:latest as production
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
